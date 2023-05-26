@@ -12,8 +12,14 @@ def crear_autor(request):
             return redirect('home:index')
     else:
         form = forms.AutorForm()
-        context = {"form": form}
-        return render(request, 'home/crear_autor.html', context)
+    return render(request, 'home/crear_autor.html', {"form": form})
 
 def crear_post(request):
-    return render(request, 'home/crear_post.html')
+    if request.method == 'POST':
+        form = forms.PostForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home:index')
+    else:
+        form = forms.PostForm()
+    return render(request, 'home/crear_post.html', {"form": form})

@@ -1,8 +1,7 @@
 from django.db import models
 
-# Create your models here.
 class Post(models.Model):
-    titulo = models.CharField(max_length=100)
+    titulo = models.CharField(max_length=255)
     contenido = models.TextField()
 
     def __str__(self):
