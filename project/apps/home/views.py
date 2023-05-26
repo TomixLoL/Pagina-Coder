@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from . import forms
+from . import forms, models
 
 def index(request):
     return render(request, 'home/index.html')
@@ -23,3 +23,13 @@ def crear_post(request):
     else:
         form = forms.PostForm()
     return render(request, 'home/crear_post.html', {"form": form})
+
+def crear_etiqueta(request):
+    if request.method == 'POST':
+        form = forms.EtiquetaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home:index')
+    else:
+        form = forms.EtiquetaForm()
+    return render(request, 'home/crear_etiqueta.html', {"form": form})

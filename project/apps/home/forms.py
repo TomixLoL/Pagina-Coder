@@ -11,3 +11,8 @@ class PostForm(forms.ModelForm):
     class Meta:
         model = models.Post
         fields = '__all__'
+
+class EtiquetaForm(forms.ModelForm):
+    class Meta:
+        model = models.Etiqueta
+        fields = '__all__'
