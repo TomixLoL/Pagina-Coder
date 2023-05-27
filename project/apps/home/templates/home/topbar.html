@@ -1,0 +1,20 @@
+<!-- Top navigation-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <div class="container-fluid">
+        <button class="btn btn-primary" id="sidebarToggle">Menu</button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                <li class="nav-item active"><a class="nav-link" href="{% url 'home:index' %}">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/admin">Admin</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Otros</a>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="https://www.coderhouse.com/">Coderhouse</a>
+                        <a class="dropdown-item" href="https://github.com/TomixLoL/Pagina-Coder/">Mi Github</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

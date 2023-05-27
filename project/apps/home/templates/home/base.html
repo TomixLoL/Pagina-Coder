@@ -1,18 +1,36 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
-</head>
-<body>
-    <h1>Prueba</h1>
-    {% block content %}
-        
-    {% endblock content %}
-
-    {% include 'home/footer.html' %}
-
-</body>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Pagina - Coder</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{% static 'home/assets/favicon.ico' %}" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'home/css/styles.css' %}" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="d-flex" id="wrapper">
+            {% include 'home/sidebar.html' %}
+            
+            <!-- Page content wrapper-->
+            <div id="page-content-wrapper">
+                {% include 'home/topbar.html' %}
+                <!-- Page content-->
+                <div class="container-fluid">
+                    {% block content %}
+                    
+                    {% endblock content %}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{% static 'home/js/scripts.js' %}"></script>
+    </body>
 </html>
